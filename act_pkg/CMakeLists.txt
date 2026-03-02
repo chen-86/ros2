@@ -26,5 +26,10 @@ endif()
 add_executable(ma_node src/ma_node.cpp)
 ament_target_dependencies(ma_node rclcpp std_msgs)
 install(TARGETS ma_node DESTINATION lib/${PROJECT_NAME})
+# 安装 launch 文件
+install(DIRECTORY
+  launch
+  DESTINATION share/${PROJECT_NAME}/
+)
 
 ament_package()
